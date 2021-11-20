@@ -1,13 +1,13 @@
 .icon {
     font-size: 20px;
     font-weight: 100;
-    padding-right: 5px;
+    padding-right: 10px;
     position: relative;
     top: 3px;
 }
 
 .desc{
-  font-family: 'Glegoo', sans-serif;
+  font-family: var(--glegoo);
 }
 
 .marginTop20{

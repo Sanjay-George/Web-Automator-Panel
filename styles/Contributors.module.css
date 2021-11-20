@@ -7,8 +7,9 @@
 
 
 .name{
+    font-family: var(--oswald);
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -16,6 +17,6 @@
 
 .commitCount {
     color: var(--secondaryColor);
-    font-family: var(--secondaryFont);
+    font-family: var(--glegoo);
     font-size: 0.8rem;
 }

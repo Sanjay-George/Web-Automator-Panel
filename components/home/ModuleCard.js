@@ -6,7 +6,7 @@ import styles from "/styles/ModuleCard.module.css";
 
 export default function ModuleCard({ name, description, icon, color }) {
   return (
-    <Col className={styles.marginTop20}>
+    <Col className={styles.marginTop20} md="auto">
       <Card className={styles.card} style={{ width: "18rem"}}>
         <Card.Body>
           <Card.Title>
