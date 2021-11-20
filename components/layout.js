@@ -15,7 +15,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Glegoo&family=Junge&family=Oswald:wght@300;400&family=Poiret+One&display=swap" rel="stylesheet" />
       </Head>
 

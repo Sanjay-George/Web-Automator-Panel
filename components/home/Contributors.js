@@ -14,7 +14,7 @@ export default function Contributors({ contributors }) {
       {contributors.map((item) => {
         return (
           <Col key={item.id} md="auto">
-            <a href={item.html_url} target="_blank">
+            <a href={item.html_url} target="_blank" rel="noreferrer">
               <Card style={{ width: "150px" }} className={styles.card}>
                 <Card.Body>
                   <div className={styles.avatar}>

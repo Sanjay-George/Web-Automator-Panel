@@ -36,9 +36,10 @@ export default function Modules() {
     <>
       <Row style={{ marginTop: "10px" }}>
         <h3>Modules</h3>
-        {modules.map((item) => {
+        {modules.map((item, index) => {
           return (
             <ModuleCard
+              key={index}
               name={item.name}
               description={item.description}
               icon={item.icon}

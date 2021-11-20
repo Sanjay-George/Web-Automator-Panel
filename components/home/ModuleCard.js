@@ -4,9 +4,9 @@ import Link from "next/link";
 
 import styles from "/styles/ModuleCard.module.css";
 
-export default function ModuleCard({ name, description, icon, color }) {
+export default function ModuleCard({ name, description, icon, color, key }) {
   return (
-    <Col className={styles.marginTop20} md="auto">
+    <Col className={styles.marginTop20} md="auto" key={key}>
       <Card className={styles.card} style={{ width: "18rem"}}>
         <Card.Body>
           <Card.Title>

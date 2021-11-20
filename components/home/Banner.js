@@ -14,7 +14,7 @@ export default function Banner() {
       <Row className={styles.titleRow}>
         <h1 className={styles.title}>Web Automator</h1>
         <p className={styles.subTitle}>
-          The most versatile and powerful automator on the web. And it's easy to use!
+          {`The most powerful and versatile automator on the web. And it's easy to use!`}
         </p>
       </Row>
       <div>
