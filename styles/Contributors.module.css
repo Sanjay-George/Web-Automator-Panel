@@ -1,0 +1,21 @@
+.card {
+    background-color: var(--primaryColor);
+    color: var(--fourthColor);
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.name{
+    font-weight: bold;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.commitCount {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: 0.8rem;
+}
