@@ -5,6 +5,8 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>Web Automator</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Web Automator allows you to automate a variety of tasks on the web."

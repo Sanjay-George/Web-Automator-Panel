@@ -1,0 +1,53 @@
+.table {
+    position: relative;
+    top: 50px;
+    left: 220px;    
+    width: calc(100% - 240px);
+    margin: 0;
+}
+
+.dataRow, .heading {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--glegoo);
+}
+
+.dataRow {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.actions i{
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.actions i:hover{
+    color: var(--fourthColor);
+}
+
+.badge{
+    position: relative;
+    top: -2px;
+    margin-right: 8px;
+    font-family: var(--glegoo);
+    font-size: 10px;
+}
+
+.addBtn {
+    text-align: center;
+}
+.addBtn button {
+    border-color:  var(--secondaryColor);
+    color: var(--secondaryColor);
+}
+
+.addBtn button:hover, .addBtn button:focus {
+    border-color:  var(--secondaryColor);
+    color: white;
+    background-color: var(--secondaryColor);
+    box-shadow: none;
+}
