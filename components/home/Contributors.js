@@ -6,6 +6,7 @@ import Image from "next/image";
 import styles from "../../styles/Contributors.module.css";
 
 export default function Contributors({ contributors }) {
+  if(!contributors || !contributors.length) return null;
   return (
     <Row style={{}}>
       <h3>Contributors</h3>

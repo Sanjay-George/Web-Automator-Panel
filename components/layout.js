@@ -9,7 +9,7 @@ export default function Layout({ children }) {
           name="description"
           content="Web Automator allows you to automate a variety of tasks on the web."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/wa-icon.jpg" />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"

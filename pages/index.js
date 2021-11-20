@@ -30,7 +30,7 @@ export default function Home( {contributors}) {
 
 export async function getStaticProps(context) {
   const res = await fetch(`https://api.github.com/repos/Sanjay-George/Web-Automator/contributors`);
-  const contributors = await res.json();
+  const contributors = await res.json() || [];
   return {
     props: {  contributors }, // will be passed to the page component as props
   };
