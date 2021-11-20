@@ -1,6 +1,6 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ModuleCard from "/components/Home/ModuleCard";
+import ModuleCard from "../../components/Home/ModuleCard";
 
 
 const modules = [

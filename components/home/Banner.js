@@ -2,7 +2,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "next/image";
 
-import styles from "/styles/Banner.module.css";
+import styles from "../../styles/Banner.module.css";
 
 export default function Banner() {
   return (
