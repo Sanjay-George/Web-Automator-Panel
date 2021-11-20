@@ -8,11 +8,12 @@
 
 .name{
     font-family: var(--oswald);
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 0.85rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    letter-spacing: 1px;
 }
 
 .commitCount {

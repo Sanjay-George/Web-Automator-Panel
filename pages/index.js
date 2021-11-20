@@ -19,7 +19,7 @@ export default function Home( {contributors}) {
           <Modules />
         </Container>
 
-        <Container className={`inverted`} fluid style={{ marginTop: "50px", padding: 30, backgroundColor: "#1d3557", color: "#f1faee"}}>
+        <Container className={`inverted`} fluid style={{ marginTop: "50px", padding: 30, color: "#f1faee"}}>
           <Container fluid="md" style={{ maxWidth: 996 }}>
             <Contributors contributors={contributors} />
           </Container>

@@ -1,9 +1,21 @@
-:root {
+/* creamy-blue palette */
+/* :root {
   --primaryColor: #f1faee;
   --secondaryColor: #1d3557;
   --bgColor: #f1faee;
   --thirdColor: #a8dadc;
   --fourthColor: #457b9d;
+  --oppColor: #e63946;
+} */
+
+
+/* black-white-pink palette */
+:root {
+  --primaryColor: #fafafa;
+  --secondaryColor: #1B1B1B;
+  --bgColor: #fafafa;
+  --thirdColor: #CC99CC;
+  --fourthColor: #f50057 ;
   --oppColor: #e63946;
 }
 
@@ -37,6 +49,10 @@ h3{
   color: var(--secondaryColor);
   font-family: var(--glegoo);
   font-weight: bold;
+}
+
+.inverted{
+  background-color: var(--secondaryColor);
 }
 
 .inverted h3{
