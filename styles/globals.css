@@ -1,8 +1,25 @@
+:root {
+  --primaryColor: #f1faee;
+  --secondaryColor: #1d3557;
+  --bgColor: #f1faee;
+  --thirdColor: #a8dadc;
+  --fourthColor: #457b9d;
+  --oppColor: #e63946;
+}
+
+:root {
+  --primaryFont: 'Poiret One', sans-serif;
+  --secondaryFont: 'Glegoo', sans-serif;
+  --thirdFont: 'Junge', sans-serif;
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif;
+  background-color: var(--bgColor);
 }
 
 a {
@@ -13,3 +30,16 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h3{
+  color: var(--secondaryColor);
+  font-family: var(--primaryFont);
+  font-weight: bold;
+}
+
+.inverted h3{
+  color: var(--primaryColor);
+}
+
+
+

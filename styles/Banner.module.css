@@ -1,12 +1,13 @@
 .lightBar {
-  background-color: #fafafa ;
+  background-color: var(--primaryColor);  
   height: 400px;
 }
 .darkBar {
-  background-color: #5b7f90;
+  /* background-color: #5b7f90; */
+  background-color: var(--secondaryColor) ;
   height: 1000px;
   width: 1000px;
-  transform: translateX(1000px) translateY(-700px) rotate(-45deg);
+  transform: translateX(800px) translateY(-1000px) rotate(-45deg);
 }
 
 .background {
@@ -17,10 +18,27 @@
 .titleRow {
   /* display: inline-block; */
   position: absolute;
-  top: 25%;
+  top: 20%;
   width: 100%;
   padding-left: 150px;
-  flex-wrap: nowrap;
+}
+
+.title {
+  font-family: var(--primaryFont);
+  text-align: left;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  color: var(--secondaryColor);
+  letter-spacing: 2px;
+}
+
+.subTitle {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: var(--fourthColor);
+  position: relative;
 }
 
 .icon {
@@ -32,12 +50,3 @@
   top: -5px;
 }
 
-.title {
-  font-family: 'Poiret One', sans-serif;
-  text-align: left;
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  color: black;
-  letter-spacing: 2px;
-}

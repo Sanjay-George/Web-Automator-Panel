@@ -5,3 +5,16 @@
     position: relative;
     top: 3px;
 }
+
+.desc{
+  font-family: 'Glegoo', sans-serif;
+}
+
+.marginTop20{
+  margin-top: 20px;
+}
+
+.card {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
