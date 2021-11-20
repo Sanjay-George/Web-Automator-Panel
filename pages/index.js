@@ -2,9 +2,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Banner from "../components/Home/Banner";
-import Modules from "../components/Home/Modules";
-import Contributors from "../components/Home/Contributors";
+import Banner from "../components/home/Banner";
+import Modules from "../components/home/Modules";
+import Contributors from "../components/home/Contributors";
 import Layout from "../components/layout";
 
 
