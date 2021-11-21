@@ -32,10 +32,10 @@ export default function Index({ contributors }) {
           <Col>Bikewale</Col>
           <Col md={4}>www.bikewale.com</Col>
           <Col className={styles.actions}>
-            <i class="material-icons black-text">play_arrow</i>
-            <i class="material-icons black-text">settings</i>
-            <i class="material-icons black-text">webhook</i>
-            <i class="material-icons black-text">download</i>
+            <i className={"material-icons black-text"}>play_arrow</i>
+            <i className={"material-icons black-text"}>settings</i>
+            <i className={"material-icons black-text"}>webhook</i>
+            <i className={"material-icons black-text"}>download</i>
           </Col>
           <Col className={styles.actions}>
             <Badge bg="warning" className={styles.badge}>
@@ -43,7 +43,7 @@ export default function Index({ contributors }) {
             </Badge>
           </Col>
           <Col md={1} className={styles.actions}>
-            <i class="material-icons black-text">delete</i>
+            <i className={"material-icons black-text"}>delete</i>
           </Col>
         </Row>
 
@@ -51,10 +51,10 @@ export default function Index({ contributors }) {
           <Col>Carwale - Honda Cars</Col>
           <Col md={4}>www.carwale.com/honda-cars/</Col>
           <Col className={styles.actions}>
-            <i class="material-icons black-text">play_arrow</i>
-            <i class="material-icons black-text">settings</i>
-            <i class="material-icons black-text">webhook</i>
-            <i class="material-icons black-text">download</i>
+            <i className={"material-icons black-text"}>play_arrow</i>
+            <i className={"material-icons black-text"}>settings</i>
+            <i className={"material-icons black-text"}>webhook</i>
+            <i className={"material-icons black-text"}>download</i>
           </Col>
           <Col className={styles.actions}>
             <Badge bg="success" className={styles.badge}>
@@ -62,7 +62,7 @@ export default function Index({ contributors }) {
             </Badge>
           </Col>
           <Col md={1} className={styles.actions}>
-            <i class="material-icons black-text">delete</i>
+            <i className={"material-icons"}>delete</i>
           </Col>
         </Row>
 
