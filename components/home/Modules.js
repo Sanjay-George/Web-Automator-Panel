@@ -28,7 +28,7 @@ export const modules = [
   {
     name: "UI Testing",
     description: "Configure UI Tests for your website without any code",
-    icon: "monitor_heart",
+    icon: "bug_report",
     color: "yellow",
     path: "/",
   },

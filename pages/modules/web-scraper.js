@@ -8,67 +8,65 @@ import Contributors from "../../components/home/Contributors";
 import Layout from "../../components/layout";
 import NavBar from "../../components/common/Navbar";
 import SideBar from "../../components/common/Sidebar";
-import Badge from "react-bootstrap/Badge";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
+import CustomModal from "../../components/common/CustomModal";
+import { useState } from "react";
 
 import styles from "../../styles/WebScraper.module.css";
+import DataRow from "../../components/web-scraper/DataRow";
 
-export default function Index({ contributors }) {
+export default function Index({ crawlers }) {
+  const [showModal, setShowModal] = useState(false);
+  const [showWebHookModal, setShowWebHookModal] = useState(false);
+
   return (
     <Layout>
       <NavBar />
       <SideBar activeIndex={0} />
 
+      <CustomModal
+        heading="Add Crawler"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+      >
+        <p>This will be a form to add crawler.</p>
+      </CustomModal>
+
+      <CustomModal
+        heading="WebHooks"
+        show={showWebHookModal}
+        onHide={() => setShowWebHookModal(false)}
+      >
+        <p>
+          There will be support for webhooks here. Once data is scraped, the
+          automator will call the webHook and pass on the data.
+        </p>
+      </CustomModal>
+
       <Container className={styles.table}>
         <Row className={styles.heading}>
-          <Col>Name</Col>
+          <Col md={2}>Name</Col>
           <Col md={4}>Url</Col>
-          <Col>Actions</Col>
-          <Col>Status</Col>
+          <Col md={3}>Actions</Col>
+          <Col md={1}>Status</Col>
+          <Col md={1}>LastRun</Col>
           <Col md={1}>Delete</Col>
         </Row>
 
-        <Row className={styles.dataRow}>
-          <Col>Bikewale</Col>
-          <Col md={4}>www.bikewale.com</Col>
-          <Col className={styles.actions}>
-            <i className={"material-icons black-text"}>play_arrow</i>
-            <i className={"material-icons black-text"}>settings</i>
-            <i className={"material-icons black-text"}>webhook</i>
-            <i className={"material-icons black-text"}>download</i>
-          </Col>
-          <Col className={styles.actions}>
-            <Badge bg="warning" className={styles.badge}>
-              In Progress
-            </Badge>
-          </Col>
-          <Col md={1} className={styles.actions}>
-            <i className={"material-icons black-text"}>delete</i>
-          </Col>
-        </Row>
-
-        <Row className={styles.dataRow}>
-          <Col>Carwale - Honda Cars</Col>
-          <Col md={4}>www.carwale.com/honda-cars/</Col>
-          <Col className={styles.actions}>
-            <i className={"material-icons black-text"}>play_arrow</i>
-            <i className={"material-icons black-text"}>settings</i>
-            <i className={"material-icons black-text"}>webhook</i>
-            <i className={"material-icons black-text"}>download</i>
-          </Col>
-          <Col className={styles.actions}>
-            <Badge bg="success" className={styles.badge}>
-              Data scraped
-            </Badge>
-          </Col>
-          <Col md={1} className={styles.actions}>
-            <i className={"material-icons"}>delete</i>
-          </Col>
-        </Row>
+        {crawlers.map((crawler) => {
+          return (
+            <DataRow crawler={crawler} setShowWebHookModal={setShowWebHookModal}/>
+          );
+        })}
 
         <Row>
           <Col className={styles.addBtn}>
-            <Button variant="outline-primary">Add</Button>{" "}
+            <Button
+              variant="outline-primary"
+              onClick={() => setShowModal(true)}
+            >
+              Add
+            </Button>
           </Col>
         </Row>
       </Container>
@@ -76,10 +74,12 @@ export default function Index({ contributors }) {
   );
 }
 
-// export async function getStaticProps(context) {
-//   const res = await fetch(`https://api.github.com/repos/Sanjay-George/Web-Automator/contributors`);
-//   const contributors = await res.json();
-//   return {
-//     props: {  contributors }, // will be passed to the page component as props
-//   };
-// }
+export async function getServerSideProps(context) {
+  const res = await fetch(`http://localhost:5000/api/crawlers/`);
+  const crawlers = await res.json();
+  return {
+    props: { crawlers },
+  };
+}
+
+
