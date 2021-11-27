@@ -14,34 +14,18 @@ import { useState } from "react";
 
 import styles from "../../styles/WebScraper.module.css";
 import DataRow from "../../components/web-scraper/DataRow";
+import ConfigModal from "../../components/web-scraper/ConfigModal";
+import WebHookModal from "../../components/web-scraper/WebHookModal";
 
 export default function Index({ crawlers }) {
   const [showModal, setShowModal] = useState(false);
+  const [modalHeading, setModalHeading] = useState();
   const [showWebHookModal, setShowWebHookModal] = useState(false);
 
   return (
     <Layout>
       <NavBar />
       <SideBar activeIndex={0} />
-
-      <CustomModal
-        heading="Add Crawler"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-      >
-        <p>This will be a form to add crawler.</p>
-      </CustomModal>
-
-      <CustomModal
-        heading="WebHooks"
-        show={showWebHookModal}
-        onHide={() => setShowWebHookModal(false)}
-      >
-        <p>
-          There will be support for webhooks here. Once data is scraped, the
-          automator will call the webHook and pass on the data.
-        </p>
-      </CustomModal>
 
       <Container className={styles.table}>
         <Row className={styles.heading}>
@@ -53,9 +37,13 @@ export default function Index({ crawlers }) {
           <Col md={1}>Delete</Col>
         </Row>
 
-        {crawlers.map((crawler) => {
+        {crawlers.map((crawler, index) => {
           return (
-            <DataRow crawler={crawler} setShowWebHookModal={setShowWebHookModal}/>
+            <DataRow
+              key={index}  // check if to use crawler.id
+              crawler={crawler}
+              setShowWebHookModal={setShowWebHookModal}
+            />
           );
         })}
 
@@ -63,12 +51,27 @@ export default function Index({ crawlers }) {
           <Col className={styles.addBtn}>
             <Button
               variant="outline-primary"
-              onClick={() => setShowModal(true)}
+              onClick={() => {
+                setShowModal(true);
+                setModalHeading("Add Crawler");
+              }}
             >
               Add
             </Button>
           </Col>
         </Row>
+        
+        <ConfigModal
+          heading={modalHeading}
+          show={showModal}
+          onHide={() => setShowModal(false)}
+        />
+
+        <WebHookModal
+          heading="WebHooks"
+          show={showWebHookModal}
+          onHide={() => setShowWebHookModal(false)}
+        />
       </Container>
     </Layout>
   );
@@ -81,5 +84,3 @@ export async function getServerSideProps(context) {
     props: { crawlers },
   };
 }
-
-

@@ -26,6 +26,10 @@
     cursor: pointer;
 }
 
+.active{
+    color: var(--oppColor);
+}
+
 .actions i:hover{
     color: var(--fourthColor);
 }

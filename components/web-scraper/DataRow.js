@@ -2,12 +2,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Badge from "react-bootstrap/Badge";
 
+import { useRouter } from "next/router";
 import styles from "../../styles/WebScraper.module.css";
 
 export default function DataRow({ crawler, setShowWebHookModal }) {
+  const router = useRouter();
+
   return (
     <>
-      <Row className={styles.dataRow} key={crawler.id}>
+      <Row className={styles.dataRow}>
         <Col md={2}>{crawler.name}</Col>
         <Col md={4}>
           <a href={crawler.url} target="_blank" rel="noreferrer">
@@ -17,7 +20,7 @@ export default function DataRow({ crawler, setShowWebHookModal }) {
         <Col md={3} className={styles.actions}>
           <i className={"material-icons black-text"}>edit</i>
           <i
-            className={"material-icons black-text"}
+            className={`material-icons black-text ${crawler.configChain ? styles.active : ""}`}
             onClick={() => configureCrawler(crawler.id)}
           >
             settings
@@ -46,13 +49,22 @@ export default function DataRow({ crawler, setShowWebHookModal }) {
           </Badge>
         </Col>
         <Col md={1} className={styles.lastRun}>
-          {new Date(crawler.lastRun).toLocaleString()}
+          {crawler.lastRun
+            ? new Date(crawler.lastRun).toLocaleString()
+            : "Not Run Yet"}
         </Col>
         <Col md={1} className={styles.actions}>
-          <i className={"material-icons black-text"}>delete</i>
+          <i
+            className={"material-icons black-text"}
+            onClick={() => {
+              deleteCrawler(crawler.id);
+              router.reload();
+            }}
+          >
+            delete
+          </i>
         </Col>
       </Row>
-      ;
     </>
   );
 }
@@ -79,6 +91,16 @@ async function runCrawler(id) {
   try {
     await fetch(`http://localhost:5000/api/crawlers/run/${id}`, {
       method: "POST",
+    });
+  } catch (ex) {
+    console.error(ex);
+  }
+}
+
+async function deleteCrawler(id) {
+  try {
+    await fetch(`http://localhost:5000/api/crawlers/${id}`, {
+      method: "DELETE",
     });
   } catch (ex) {
     console.error(ex);
