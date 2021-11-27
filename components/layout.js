@@ -5,7 +5,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>Web Automator</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -17,7 +17,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Glegoo&family=Junge&family=Oswald:wght@300;400&family=Poiret+One&display=swap" rel="stylesheet" />
       </Head>
 
