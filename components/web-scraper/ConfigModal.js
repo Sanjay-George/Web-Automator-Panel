@@ -84,7 +84,7 @@ export default function ConfigModal({ heading, show, onHide }) {
           <Row>
             <Col>
               <Button variant="primary" type="submit">
-                Let's go!
+                {`Let's go!`}
               </Button>
             </Col>
           </Row>
