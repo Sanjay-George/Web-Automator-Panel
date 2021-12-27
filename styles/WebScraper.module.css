@@ -9,6 +9,7 @@
 .dataRow, .heading {
     margin: 10px 0;
     text-align: center;
+    align-items: center;
 }
 
 .heading {
@@ -25,13 +26,17 @@
     cursor: pointer;
 }
 
+.active{
+    color: var(--oppColor);
+}
+
 .actions i:hover{
     color: var(--fourthColor);
 }
 
 .badge{
     position: relative;
-    top: -2px;
+    top: -4px;
     margin-right: 8px;
     font-family: var(--glegoo);
     font-size: 10px;
@@ -50,4 +55,9 @@
     color: white;
     background-color: var(--secondaryColor);
     box-shadow: none;
+}
+
+.lastRun{
+    color: #737373;
+    font-size: 12px;
 }
