@@ -78,8 +78,15 @@ export default function Index({ crawlers }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:5000/api/crawlers/`);
-  const crawlers = await res.json();
+  let crawlers = [];
+  try {
+    const res = await fetch(`http://localhost:5000/api/crawlers/`);
+    crawlers = await res.json();
+  }
+  catch(ex) {
+    console.error(ex);
+  }
+  
   return {
     props: { crawlers },
   };

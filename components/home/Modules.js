@@ -12,6 +12,13 @@ export const modules = [
     path: "/modules/web-scraper",
   },
   {
+    name: "APIs",
+    description: "Create great APIs off the Web powered by web scraper",
+    icon: "api",
+    color: "blue",
+    path: "/",
+  },
+  {
     name: "Data Monitoring",
     description: "Monitor prices or other data on your favorite websites",
     icon: "data_thresholding",

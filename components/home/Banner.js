@@ -9,7 +9,7 @@ export default function Banner() {
     <>
       <Row className={styles.background}>
         <div className={styles.lightBar}></div>
-        <div className={styles.darkBar}></div>
+        {/* <div className={styles.darkBar}></div> */}
       </Row>
       <Row className={styles.titleRow}>
         <h1 className={styles.title}>Web Automator</h1>
@@ -17,13 +17,13 @@ export default function Banner() {
           {`The most powerful and versatile automator on the web. And it's easy to use!`}
         </p>
       </Row>
-      <div>
+      {/* <div> */}
         {/* <span className={`material-icons ${styles.phone}`}>phone_iphone</span> */}
-        <span className={`material-icons ${styles.computer}`}>computer</span>
+        {/* <span className={`material-icons ${styles.computer}`}>computer</span>
         <span className={`material-icons ${styles.web1}`}>public</span>
         <span className={`material-icons ${styles.web2}`}>settings_ethernet</span>
         <span className={`material-icons ${styles.web3}`}>cloud_download</span>
-      </div>
+      </div> */}
     </>
   );
 }
